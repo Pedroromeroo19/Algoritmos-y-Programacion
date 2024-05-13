@@ -1,0 +1,31 @@
+matriz_a = [[1, 2, 3], [4 ,5, 6], [7, 8, 9]]
+matriz_b = [[9, 8, 7], [6 ,5, 4], [3, 2, 1]]
+# Obtener dimensiones de la matriz
+if (len(matriz_b)==1):
+    print("Su matriz es de lineal")
+else:
+    print("Su dimension es de tamaño mayor a 2")
+
+# Obtener forma de la matriz (número de filas y columnas)
+longcolum = len(matriz_b[0])
+longfilas = len(matriz_b)
+print("su forma es", longcolum,"x",longfilas)
+
+#obtener tamaño
+tamaño = longcolum*longfilas
+print("El tamaño de la matriz es", tamaño)
+
+#la multiplciacion de la mtriz a por la matriz b es
+
+def multiplicacion(matriza,matrizb):
+    result = [[0, 0, 0], [0 ,0, 0], [0, 0, 0]]
+    for i in range( len(matriza) ):
+        for j in range(len(matrizb[0])):
+            for k in range(len(matrizb)):
+                result[i][j] += matriza[i][k] * matrizb[k][j]
+    return result
+
+print(multiplicacion(matriz_a,matriz_b))
+
+#traspuesta de matriz 
+def determinante(matriza):
